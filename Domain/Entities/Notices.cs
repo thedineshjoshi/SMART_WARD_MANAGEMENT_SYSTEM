@@ -1,0 +1,21 @@
+﻿using Domain.Enumerators;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Domain.Entities
+{
+    public class Notices
+    {
+        public Guid NoticeId { get; set; }
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public NoticeTypeEnum NoticeType { get; set; }
+        public string IssuedBy { get; set; }
+        public  DateTime IssuedDate { get; set; }
+        public DateTime ExpiryDate { get; set; }
+        public bool IsUrgent { get; set; }
+    }
+}
