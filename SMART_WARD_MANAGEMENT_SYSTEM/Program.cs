@@ -1,8 +1,13 @@
+using Application;
+using Domain;
+using Infrastructure;
+using SMART_WARD_MANAGEMENT_SYSTEM;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddSmartWardManagementSystemDI();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
