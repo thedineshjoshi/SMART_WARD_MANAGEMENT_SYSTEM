@@ -7,6 +7,7 @@ namespace Application
     {
         public static IServiceCollection AddApplicationDI(this IServiceCollection services)
         {
+            
             return services;
         }
 
