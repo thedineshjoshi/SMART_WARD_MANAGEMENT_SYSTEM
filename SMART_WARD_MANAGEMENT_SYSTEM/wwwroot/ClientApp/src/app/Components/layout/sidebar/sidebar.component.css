@@ -1,0 +1,56 @@
+.sidebar {
+  width: 260px;
+  background: #0f4c75;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo h2 {
+  margin: 0;
+}
+
+.logo p {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* NAV */
+.nav-menu {
+  flex: 1;
+  padding: 10px;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background: #3282b8;
+}
+
+/* LOGOUT */
+.logout {
+  padding: 15px;
+}
+
+.logout button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #e63946;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces
 {
-    public class IActivityLogger
+    public interface IActivityLogger
     {
-        
+        Task LogActivity(ActivityLogEntry entry);
     }
 }

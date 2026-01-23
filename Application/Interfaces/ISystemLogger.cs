@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces
 {
-    public class ISystemLogger
+    public interface ISystemLogger
     {
-        
+        Task LogInfo(string message);
+        Task LogError(string message, Exception ex);
     }
 }

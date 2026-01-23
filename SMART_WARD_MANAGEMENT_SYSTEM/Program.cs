@@ -19,7 +19,7 @@ builder.Services.AddScoped<ISystemLogger, SerilogSystemLogger>();
 
 builder.Services.AddScoped<WardApplicationService>();
 
-builder.Services.AddSmartWardManagementSystemDI();
+builder.Services.AddSmartWardManagementSystemDI(builder.Configuration);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 

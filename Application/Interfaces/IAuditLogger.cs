@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Application.Interfaces
 {
-    public class IAuditLogger
+    public interface IAuditLogger
     {
-        
+        Task LogChange(AuditLogEntry entry);
+
     }
 }

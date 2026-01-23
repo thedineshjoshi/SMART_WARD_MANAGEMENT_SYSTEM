@@ -6,11 +6,11 @@ namespace SMART_WARD_MANAGEMENT_SYSTEM
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddSmartWardManagementSystemDI(this IServiceCollection services)
+        public static IServiceCollection AddSmartWardManagementSystemDI(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddApplicationDI();
             services.AddDomainDI();
-            services.AddInfrastructureDI();
+            services.AddInfrastructureDI(configuration);
             return services;
         }
     }

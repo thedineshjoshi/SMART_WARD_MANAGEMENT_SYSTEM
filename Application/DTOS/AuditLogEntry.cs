@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Application.DTOS
 {
-    internal class AuditLogEntry
+    public class AuditLogEntry
     {
-        public string EntityName { get; set; } // e.g., "PropertyTaxRecord"
+        public string EntityName { get; set; } 
         public string EntityId { get; set; }
-        public string Changes { get; set; } // JSON serialized diff
+        public string Changes { get; set; } 
         public string ChangedBy { get; set; }
         public DateTime ChangedAt { get; set; } = DateTime.UtcNow;
     }

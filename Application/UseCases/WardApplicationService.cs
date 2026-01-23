@@ -10,7 +10,20 @@ namespace Application.UseCases
 {
     public class WardApplicationService
     {
-        
-        
+        private readonly IAuditLogger _auditLogger;
+        private readonly IActivityLogger _activityLogger;
+        private readonly ISystemLogger _systemLogger;
+
+        public WardApplicationService(
+            IAuditLogger auditLogger,
+            IActivityLogger activityLogger,
+            ISystemLogger systemLogger)
+        {
+            _auditLogger = auditLogger;
+            _activityLogger = activityLogger;
+            _systemLogger = systemLogger;
+        }
+
+
     }
 }
