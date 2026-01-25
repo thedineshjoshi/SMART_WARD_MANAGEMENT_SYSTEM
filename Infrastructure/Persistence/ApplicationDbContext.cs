@@ -31,6 +31,7 @@ namespace Infrastructure.Persistence
         public DbSet<ServiceRequest>ServiceRequests { get; set; }
         public DbSet<StatusHistory> StatusHistories { get; set; }
         public DbSet<StatusMaster> StatusMasters { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> UsersDetails { get; set; }
+        public DbSet<SignUp> Users { get; set; }
     }
 }
