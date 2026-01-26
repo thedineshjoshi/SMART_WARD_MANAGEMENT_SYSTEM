@@ -8,7 +8,7 @@ namespace SMART_WARD_MANAGEMENT_SYSTEM
     {
         public static IServiceCollection AddSmartWardManagementSystemDI(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddApplicationDI();
+            services.AddApplicationDI(configuration);
             services.AddDomainDI();
             services.AddInfrastructureDI(configuration);
             return services;

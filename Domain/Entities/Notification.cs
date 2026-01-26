@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Notifications
+    public class Notification
     {
         public Guid NotificationId { get; set; }
-        public User User { get; set; }
         public Guid UserId { get; set; }
         public string NotificationType { get; set; }
         public string Message { get; set; }

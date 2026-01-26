@@ -14,7 +14,6 @@ namespace Domain.Entities
         public ReferenceTypeEnum ReferenceType { get; set; }
         public Guid OldStatusId { get; set; }
         public Guid NewStatusId { get; set; }
-        public User User { get; set; }
         public Guid ChangedBy { get; set; }
         public string ChangeReason { get; set; }
         public DateTime ChangedAt { get; set; }

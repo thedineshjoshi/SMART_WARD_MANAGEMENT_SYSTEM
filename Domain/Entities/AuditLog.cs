@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class AuditLogs
+    public class AuditLog
     {
         public Guid AuditId { get; set; }
-        public User User { get; set; }
         public Guid UserId { get; set; }
         public string EntityName { get; set; }      
         public string EntityId { get; set; }        

@@ -10,7 +10,6 @@ namespace Domain.Entities
     public class ServiceRequest
     {
         public Guid ServiceRequestId { get; set; }
-        public User User { get; set; }
         public Guid UserId { get; set; }
         public string ServiceType { get; set; }
         public string ApplicationNumber { get; set; }

@@ -9,9 +9,7 @@ namespace Application
     {
         public static IServiceCollection AddApplicationDI(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<IAuditLogger, SqlAuditLogger>();
-            services.AddScoped<IActivityLogger, FileActivityLogger>();
-            services.AddScoped<ISystemLogger, SerilogSystemLogger>();
+            
             return services;
         }
 

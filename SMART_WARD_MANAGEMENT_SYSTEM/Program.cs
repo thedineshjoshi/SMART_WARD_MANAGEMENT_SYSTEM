@@ -7,16 +7,6 @@ using SMART_WARD_MANAGEMENT_SYSTEM;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// 1. Audit mapping
-builder.Services.AddScoped<IAuditLogger, SqlAuditLogger>();
-
-// 2. Activity mapping
-builder.Services.AddScoped<IActivityLogger, FileActivityLogger>();
-
-// 3. System mapping
-builder.Services.AddScoped<ISystemLogger, SerilogSystemLogger>();
-
 builder.Services.AddScoped<WardApplicationService>();
 
 builder.Services.AddSmartWardManagementSystemDI(builder.Configuration);

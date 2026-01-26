@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class ComplaintEscalations
+    public class ComplaintEscalation
     {
         public Guid EscalationId { get; set; }
-        public Complaints Complaints { get; set; }
         public Guid ComplaintId { get; set; }
         public string EscalatedFrom { get; set; }
         public string EscalatedTo { get; set; }

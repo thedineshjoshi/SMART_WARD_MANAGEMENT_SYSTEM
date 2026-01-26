@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Complaints
+    public class Complaint
     {
         public Guid ComplaintId { get; set; }
-        public User User { get; set; }
         public Guid UserId { get; set; }
         public string ComplaintNumber { get; set; }
         public string Category { get; set; }

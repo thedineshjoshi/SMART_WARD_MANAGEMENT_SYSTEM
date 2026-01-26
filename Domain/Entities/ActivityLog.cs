@@ -9,7 +9,7 @@ namespace Domain.Entities
     public class ActivityLog
     {
         public Guid ActivityID { get; set; }
-        public string UserId { get; set; }          
+        public Guid UserId { get; set; }          
         public string UserFullName { get; set; }    
         public string Action { get; set; }          
         public string Module { get; set; }          

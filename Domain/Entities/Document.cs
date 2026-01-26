@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Documents
+    public class Document
     {
         public Guid DocumentId { get; set; }
         public Guid ReferenceId { get; set; }
@@ -20,7 +20,7 @@ namespace Domain.Entities
         public string FilePath { get; set; }
         public string QRHash { get; set; }
         public string DigitalSignature { get; set; }
-        public string IsVerified { get; set; }
+        public bool IsVerified { get; set; }
         public string VerifiedBy { get; set; }
         public DateTime VerifiedAt { get; set; }
 
