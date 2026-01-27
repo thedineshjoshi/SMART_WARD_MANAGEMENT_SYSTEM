@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260126062548_initial")]
+    [Migration("20260127172744_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -617,9 +617,8 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CitizenshipIssuedDate")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("CitizenshipIssuedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("CitizenshipIssuedDistrict")
                         .IsRequired()
@@ -691,9 +690,8 @@ namespace Infrastructure.Migrations
                     b.Property<int>("VerificationStatus")
                         .HasColumnType("int");
 
-                    b.Property<string>("VerifiedAt")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("VerifiedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("VerifiedBy")
                         .HasColumnType("uniqueidentifier");

@@ -1,15 +1,15 @@
 ﻿using Domain.Enumerators;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities
+namespace Application.Features.Users.Commands.CreateUser
 {
-    public class User
+    public class CreateUserCommand:IRequest<Guid>
     {
-        public Guid UserId { get; set; }
         public string FullNameNepali { get; set; }
         public string FullNameEnglish { get; set; }
         public string Gender { get; set; }
@@ -27,15 +27,6 @@ namespace Domain.Entities
         public string District { get; set; }
         public string Province { get; set; }
         public Guid RoleId { get; set; }
-        public bool IsVerified { get; set; } = false;
-        public VerificationStatusEnum VerificationStatus { get; set; }
-        public Guid VerifiedBy { get; set; }
-        public DateTime? VerifiedAt { get; set; }
-        public string AccountStatus { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
-
-
-
+       
     }
 }

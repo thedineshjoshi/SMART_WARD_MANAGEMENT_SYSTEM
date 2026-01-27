@@ -141,7 +141,7 @@ namespace Infrastructure.Migrations
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CitizenshipNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CitizenshipIssuedDistrict = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CitizenshipIssuedDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CitizenshipIssuedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     NationalIdNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -155,7 +155,7 @@ namespace Infrastructure.Migrations
                     IsVerified = table.Column<bool>(type: "bit", nullable: false),
                     VerificationStatus = table.Column<int>(type: "int", nullable: false),
                     VerifiedBy = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    VerifiedAt = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    VerifiedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     AccountStatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)

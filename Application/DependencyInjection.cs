@@ -9,7 +9,7 @@ namespace Application
     {
         public static IServiceCollection AddApplicationDI(this IServiceCollection services, IConfiguration configuration)
         {
-            
+            services.AddMediatR(x => x.RegisterServicesFromAssemblyContaining(typeof(DependencyInjection)));
             return services;
         }
 

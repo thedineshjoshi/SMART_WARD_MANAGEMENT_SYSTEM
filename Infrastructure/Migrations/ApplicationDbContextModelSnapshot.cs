@@ -614,9 +614,8 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("CitizenshipIssuedDate")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("CitizenshipIssuedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("CitizenshipIssuedDistrict")
                         .IsRequired()
@@ -688,9 +687,8 @@ namespace Infrastructure.Migrations
                     b.Property<int>("VerificationStatus")
                         .HasColumnType("int");
 
-                    b.Property<string>("VerifiedAt")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime?>("VerifiedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("VerifiedBy")
                         .HasColumnType("uniqueidentifier");

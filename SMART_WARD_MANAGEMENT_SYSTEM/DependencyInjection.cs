@@ -1,6 +1,8 @@
 ﻿using Application;
+using Application.Features.Users.Commands.CreateUser;
 using Domain;
 using Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SMART_WARD_MANAGEMENT_SYSTEM
 {
