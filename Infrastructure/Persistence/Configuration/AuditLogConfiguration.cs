@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿using Domain.Entities.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Persistence.Configuration
 {
-    public class AuditLogConfiguration : IEntityTypeConfiguration<AuditLog>
+    public class AuditLogConfiguration 
     {
-        public void Configure(EntityTypeBuilder<AuditLog> builder)
-        {
-            builder.HasKey(x => x.AuditId);
+        //public void Configure(EntityTypeBuilder<AuditLog> builder)
+        //{
+        //    builder.HasKey(x => x.AuditId);
 
-            builder.HasOne<User>()
-                   .WithMany()
-                   .HasForeignKey(x => x.UserId)
-                   .OnDelete(DeleteBehavior.Restrict);
+        //    builder.HasOne<User>()
+        //           .WithMany()
+        //           .HasForeignKey(x => x.UserId)
+        //           .OnDelete(DeleteBehavior.Restrict);
 
-        }
+        //}
     }
 
 }

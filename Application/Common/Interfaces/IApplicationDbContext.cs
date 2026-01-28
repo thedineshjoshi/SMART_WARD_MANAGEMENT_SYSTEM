@@ -1,4 +1,8 @@
-﻿using Domain.Entities;
+﻿using Domain.Entities.Common;
+using Domain.Entities.Identity;
+using Domain.Entities.Logging;
+using Domain.Entities.Services;
+using Domain.Entities.Services.Complaints;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

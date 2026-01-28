@@ -1,5 +1,6 @@
 ﻿using Application.Common.Interfaces;
 using Domain.Entities;
+using Domain.Entities.Identity;
 using Domain.Enumerators;
 using MediatR;
 using System;

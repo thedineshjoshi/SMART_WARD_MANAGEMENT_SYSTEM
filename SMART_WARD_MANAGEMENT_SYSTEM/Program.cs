@@ -2,6 +2,7 @@ using Application.Interfaces;
 using Application.UseCases;
 using Domain;
 using Infrastructure.Logging;
+using Scalar.AspNetCore;
 using SMART_WARD_MANAGEMENT_SYSTEM;
 
 
@@ -20,6 +21,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 app.UseHttpsRedirection();
 
