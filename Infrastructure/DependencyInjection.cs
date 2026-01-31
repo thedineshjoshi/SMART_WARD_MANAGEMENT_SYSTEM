@@ -1,5 +1,6 @@
 ﻿using Application.Common.Interfaces;
 using Application.Interfaces;
+using Infrastructure.Authentication.Jwt;
 using Infrastructure.Logging;
 using Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ namespace Infrastructure
             services.AddScoped<IAuditLogger, SqlAuditLogger>();
             services.AddScoped<IActivityLogger, FileActivityLogger>();
             services.AddScoped<ISystemLogger, SerilogSystemLogger>();
+            services.AddScoped<Application.Common.Interfaces.IJwtTokenService, JwtTokenService>();
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("DbString"));

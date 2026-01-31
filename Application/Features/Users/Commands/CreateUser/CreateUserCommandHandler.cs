@@ -32,6 +32,8 @@ namespace Application.Features.Users.Commands.CreateUser
                 NationalIdNumber = request.NationalIdNumber,
                 PhoneNumber = request.PhoneNumber,
                 Email = request.Email,
+                Username = request.Username,
+                Password = BCrypt.Net.BCrypt.HashPassword(request.Password),
                 PermanentAddress = request.PermanentAddress,
                 TemporaryAddress = request.TemporaryAddress,
                 WardNumber = request.WardNumber,

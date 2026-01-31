@@ -145,6 +145,8 @@ namespace Infrastructure.Migrations
                     NationalIdNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PermanentAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TemporaryAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     WardNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
