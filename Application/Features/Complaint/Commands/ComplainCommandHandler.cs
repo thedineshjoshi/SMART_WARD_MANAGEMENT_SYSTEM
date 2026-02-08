@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Enumerators
+namespace Application.Features.Complaint.Commands
 {
-    public enum PriorityLevelEnum
+    internal class ComplainCommandHandler
     {
-        Low = 1,
-        Medium = 2,
-        High = 3
     }
 }

@@ -23,12 +23,10 @@ namespace Infrastructure.Persistence.Configuration
 
             builder.HasOne<StatusMaster>()
                    .WithMany()
-                   .HasForeignKey(x => x.CurrentStatusId)
                    .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne<User>()
                    .WithMany()
-                   .HasForeignKey(x => x.ApprovedBy)
                    .OnDelete(DeleteBehavior.Restrict);
 
         }

@@ -3,6 +3,7 @@ using Application.Interfaces;
 using Infrastructure.Authentication.Jwt;
 using Infrastructure.Logging;
 using Infrastructure.Persistence;
+using Infrastructure.Storage;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,7 @@ namespace Infrastructure
             services.AddScoped<IAuditLogger, SqlAuditLogger>();
             services.AddScoped<IActivityLogger, FileActivityLogger>();
             services.AddScoped<ISystemLogger, SerilogSystemLogger>();
+            services.AddScoped<IFileStorageService, LocalFileStorageService>();
             services.AddScoped<Application.Common.Interfaces.IJwtTokenService, JwtTokenService>();
             services.AddDbContext<ApplicationDbContext>(options =>
             {
