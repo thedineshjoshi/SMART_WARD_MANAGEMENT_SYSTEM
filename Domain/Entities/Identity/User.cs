@@ -9,6 +9,7 @@ namespace Domain.Entities.Identity
         public Guid UserId { get; set; }
         public string UserName { get; set; } = string.Empty;
         public Guid RoleId { get; set; }
+        public string Password { get; set; }
         public string AccountStatus { get; set; } = "Active";
 
         // --- Personal Information (Common to all) ---

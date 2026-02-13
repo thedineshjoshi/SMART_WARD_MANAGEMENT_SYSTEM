@@ -1,4 +1,4 @@
-using Application.Interfaces;
+using Application.Common.Interfaces;
 using Application.UseCases;
 using Domain;
 using Infrastructure.Logging;
