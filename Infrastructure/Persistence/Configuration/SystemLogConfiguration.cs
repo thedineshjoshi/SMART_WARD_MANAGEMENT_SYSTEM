@@ -10,12 +10,11 @@ using System.Threading.Tasks;
 namespace Infrastructure.Persistence.Configuration
 {
     public class SystemLogConfiguration
-    : IEntityTypeConfiguration<SystemLog>
     {
-        public void Configure(EntityTypeBuilder<SystemLog> builder)
-        {
-            builder.HasKey(x => x.Id);
-        }
+        //public void Configure(EntityTypeBuilder<SystemLog> builder)
+        //{
+        //    builder.HasKey(x => x.Id);
+        //}
     }
 
 }

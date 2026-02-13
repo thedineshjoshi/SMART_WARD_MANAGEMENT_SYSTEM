@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Application.Features.ServiceRequest.Queries
 {
     public class GetMyServiceRequestsQueryHandler
-    : IRequestHandler<GetMyServiceRequestsQuery, List<Domain.Entities.ServiceRequest>>
+    : IRequestHandler<GetMyServiceRequestsQuery, List<Domain.Entities.Services.ServiceRequest>>
     {
         private readonly IApplicationDbContext _context;
 
@@ -19,7 +19,7 @@ namespace Application.Features.ServiceRequest.Queries
             _context = context;
         }
 
-        public async Task<List<Domain.Entities.ServiceRequest>> Handle(
+        public async Task<List<Domain.Entities.Services.ServiceRequest>> Handle(
             GetMyServiceRequestsQuery request,
             CancellationToken cancellationToken)
         {

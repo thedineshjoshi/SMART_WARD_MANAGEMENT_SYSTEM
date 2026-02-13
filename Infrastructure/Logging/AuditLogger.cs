@@ -1,13 +1,12 @@
-﻿using Application.DTOS;
-using Application.Interfaces;
+﻿using Application.Interfaces;
 
 namespace Infrastructure.Logging
 {
     public class SqlAuditLogger : IAuditLogger
     {
-        public async Task LogChange(AuditLogEntry entry)
-        {
+        //public async Task LogChange(AuditLogEntry entry)
+        //{
             
-        }
+        //}
     }
 }

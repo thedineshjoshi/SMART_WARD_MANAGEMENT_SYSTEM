@@ -21,7 +21,7 @@ namespace Application.Features.Login.Query
         public async Task<string> Handle(LoginQuery request, CancellationToken cancellationToken)
         {
             var user = await _context.Users
-            .FirstOrDefaultAsync(x => x.Username == request.Username);
+            .FirstOrDefaultAsync(x => x.UserName == request.Username);
 
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.Password))

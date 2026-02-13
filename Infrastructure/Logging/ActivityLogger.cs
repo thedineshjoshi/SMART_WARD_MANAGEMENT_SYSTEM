@@ -1,5 +1,4 @@
-﻿using Application.DTOS;
-using Application.Interfaces;
+﻿using Application.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +10,9 @@ namespace Infrastructure.Logging
 {
     public class FileActivityLogger : IActivityLogger
     {
-        public async Task LogActivity(ActivityLogEntry entry)
-        {
+        //public async Task LogActivity(ActivityLogEntry entry)
+        //{
             
-        }
+        //}
     }
 }

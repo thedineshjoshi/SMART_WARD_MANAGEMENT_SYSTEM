@@ -23,6 +23,7 @@
     <Folder Include="Features\Complaint\Queries\" />
     <Folder Include="Features\Document\Queries\" />
     <Folder Include="Features\Users\Commands\DeleteUser\" />
+    <Folder Include="Features\Staff\Queries\" />
     <Folder Include="Features\Users\Queries\" />
   </ItemGroup>
 

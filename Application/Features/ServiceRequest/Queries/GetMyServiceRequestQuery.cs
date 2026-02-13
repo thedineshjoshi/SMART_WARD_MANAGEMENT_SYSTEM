@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.ServiceRequest.Queries
 {
-    public class GetMyServiceRequestsQuery : IRequest<List<Domain.Entities.ServiceRequest>>
+    public class GetMyServiceRequestsQuery : IRequest<List<Domain.Entities.Services.ServiceRequest>>
     {
         public Guid UserId { get; set; }
     }

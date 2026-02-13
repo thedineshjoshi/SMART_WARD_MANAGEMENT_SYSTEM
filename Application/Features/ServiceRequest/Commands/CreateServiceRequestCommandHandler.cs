@@ -22,7 +22,7 @@ namespace Application.Features.ServiceRequest.Commands
         CreateServiceRequestCommand request,
         CancellationToken cancellationToken)
         {
-            var entity = new Domain.Entities.ServiceRequest
+            var entity = new Domain.Entities.Services.ServiceRequest
             {
                 ServiceRequestId = Guid.NewGuid(),
                 UserId = request.UserId,

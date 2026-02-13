@@ -29,7 +29,7 @@ namespace Application.Features.Document.Commands
             var filePath = await _fileStorage.SaveAsync(
                 request.File, "documents");
 
-            var document = new Domain.Entities.Document
+            var document = new Domain.Entities.Common.Document
             {
                 DocumentId = Guid.NewGuid(),
                 ReferenceId = request.ReferenceId,

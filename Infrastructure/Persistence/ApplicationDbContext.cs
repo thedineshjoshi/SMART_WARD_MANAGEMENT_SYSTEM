@@ -1,5 +1,9 @@
 ﻿using Application.Common.Interfaces;
-using Domain.Entities;
+using Domain.Entities.Common;
+using Domain.Entities.Identity;
+using Domain.Entities.Logging;
+using Domain.Entities.Services;
+using Domain.Entities.Services.Complaints;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
@@ -33,6 +37,7 @@ namespace Infrastructure.Persistence
         public DbSet<ServiceRequest>ServiceRequests { get; set; }
         public DbSet<StatusHistory> StatusHistories { get; set; }
         public DbSet<StatusMaster> StatusMasters { get; set; }
+
         public DbSet<SystemLog> SystemLogs { get; set; }
         public DbSet<User> Users { get; set; }
 
@@ -42,5 +47,6 @@ namespace Infrastructure.Persistence
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
+
     }
 }
