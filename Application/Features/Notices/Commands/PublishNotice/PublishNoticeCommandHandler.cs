@@ -1,11 +1,12 @@
 ﻿using Application.Common.Interfaces;
 using Domain.Entities;
+using Domain.Entities.Common;
 using MediatR;
-using Microsoft.AspNetCore.Hosting;
 using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+
 
 namespace Application.Features.Notices.Commands.PublishNotice
 {
@@ -13,19 +14,17 @@ namespace Application.Features.Notices.Commands.PublishNotice
         : IRequestHandler<PublishNoticeCommand, Guid>
     {
         private readonly IApplicationDbContext _db;
-        private readonly IWebHostEnvironment _env;
-
+        private readonly IFileStorageService _fileStorage;
         public PublishNoticeCommandHandler(
-            IApplicationDbContext db,
-            IWebHostEnvironment env)
+            IApplicationDbContext db, IFileStorageService fileStorage)
         {
             _db = db;
-            _env = env;
+            _fileStorage = fileStorage;
         }
 
         public async Task<Guid> Handle(
-            PublishNoticeCommand request,
-            CancellationToken cancellationToken)
+    PublishNoticeCommand request,
+    CancellationToken cancellationToken)
         {
             string? filePath = null;
             string? fileType = null;
@@ -37,19 +36,7 @@ namespace Application.Features.Notices.Commands.PublishNotice
 
                 var folder = extension == ".pdf" ? "pdf" : "images";
 
-                var fileName = $"notice_{Guid.NewGuid()}{extension}";
-                var savePath = Path.Combine(
-                    _env.WebRootPath,
-                    "notices",
-                    folder,
-                    fileName);
-
-                Directory.CreateDirectory(Path.GetDirectoryName(savePath)!);
-
-                using var stream = new FileStream(savePath, FileMode.Create);
-                await request.NoticeFile.CopyToAsync(stream, cancellationToken);
-
-                filePath = $"/notices/{folder}/{fileName}";
+                filePath = await _fileStorage.SaveAsync(request.NoticeFile, folder);
             }
 
             var notice = new Notice

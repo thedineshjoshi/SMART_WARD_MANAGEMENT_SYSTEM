@@ -5,34 +5,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+
 
 namespace Infrastructure.Storage
 {
     public class LocalFileStorageService : IFileStorageService
     {
-        private readonly string _rootPath;
+        private readonly IWebHostEnvironment _env;
 
-        public LocalFileStorageService()
+        public LocalFileStorageService(IWebHostEnvironment env)
         {
-            _rootPath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
+            _env = env;
         }
 
         public async Task<string> SaveAsync(IFormFile file, string folder)
         {
-            if (!Directory.Exists(_rootPath))
-                Directory.CreateDirectory(_rootPath);
+            // wwwroot path
+            var webRootPath = _env.WebRootPath;
 
-            var folderPath = Path.Combine(_rootPath, folder);
+            var folderPath = Path.Combine(webRootPath, "notices", folder);
+
             if (!Directory.Exists(folderPath))
                 Directory.CreateDirectory(folderPath);
 
             var fileName = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+
             var fullPath = Path.Combine(folderPath, fileName);
 
             using var stream = new FileStream(fullPath, FileMode.Create);
             await file.CopyToAsync(stream);
 
-            return $"/Uploads/{folder}/{fileName}";
+            // Return relative path for database
+            return $"/notices/{folder}/{fileName}";
         }
     }
 }

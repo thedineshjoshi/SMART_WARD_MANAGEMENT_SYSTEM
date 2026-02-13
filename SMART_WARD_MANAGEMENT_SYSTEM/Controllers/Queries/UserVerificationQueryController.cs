@@ -1,6 +1,7 @@
 ﻿using Application.Features.UserVerification.Queries.GetPendingVerificationUsers;
 using Application.Features.UserVerification.Queries.GetUserVerificationDetails;
 using Domain.Entities;
+using Domain.Entities.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
