@@ -19,9 +19,10 @@ namespace Infrastructure
             {
                 options.UseSqlServer(configuration.GetConnectionString("DbString"));
             });
-            services.AddScoped<IApplicationDbContext>(provider=>provider.GetService<ApplicationDbContext>());
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
             return services;
         }
 
     }
 }
+

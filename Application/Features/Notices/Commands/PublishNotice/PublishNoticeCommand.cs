@@ -1,28 +1,20 @@
 ﻿using Domain.Enumerators;
+using MediatR;
+using Microsoft.AspNetCore.Http;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Domain.Entities
+namespace Application.Features.Notices.Commands.PublishNotice
 {
-    public class Notice
+    public class PublishNoticeCommand : IRequest<Guid>
     {
-        public Guid NoticeId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-
         public NoticeTypeEnum NoticeType { get; set; }
 
         public Guid IssuedBy { get; set; }
-        public DateTime IssuedDate { get; set; }
         public DateTime? ExpiryDate { get; set; }
-
         public bool IsUrgent { get; set; }
 
-        public string? FilePath { get; set; }
-        public string? FileType { get; set; }
+        public IFormFile? NoticeFile { get; set; }   //  PDF / JPG
     }
-
 }
